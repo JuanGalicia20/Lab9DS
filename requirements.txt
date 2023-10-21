@@ -4,6 +4,4 @@ matplotlib
 numpy
 seaborn
 statsmodels
-sklearn
-joblib
 prophet
