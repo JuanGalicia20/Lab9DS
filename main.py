@@ -73,7 +73,7 @@ fecha_fin = data.index.max()
 # Genera un rango de fechas consecutivas para las predicciones
 prediccion_index = pd.date_range(start=fecha_fin + pd.DateOffset(months=1), periods=90)
 
-c2023 = data["2023"]["Precio"].sum()
+c2023 = data["2022"]["Precio"].sum()
 
 preds = resultado1p.get_forecast(steps=1)
 print(preds)
