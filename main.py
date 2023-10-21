@@ -7,7 +7,6 @@ import streamlit.components.v1 as components
 from streamlit_extras.metric_cards import style_metric_cards
 from statsmodels.tsa.arima_model import ARIMA
 from statsmodels.tsa.statespace.sarimax import SARIMAX
-from sklearn.linear_model import LinearRegression
 import joblib
 from prophet import Prophet
 
