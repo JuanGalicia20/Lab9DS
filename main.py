@@ -48,6 +48,8 @@ data = pd.read_csv("./precios.csv")
 data["Fecha"] = pd.to_datetime(data["Fecha"])
 
 data.set_index(data["Fecha"], inplace=True, drop=True)
+c2023 = data[data["Fecha"].dt.year == 2023]["Precio"].sum()
+
 data.drop(columns=["Fecha"], inplace=True)
 
 data['Precio'] = data['Precio'].interpolate()
@@ -73,7 +75,6 @@ fecha_fin = data.index.max()
 # Genera un rango de fechas consecutivas para las predicciones
 prediccion_index = pd.date_range(start=fecha_fin + pd.DateOffset(months=1), periods=90)
 
-c2023 = data["2022"]["Precio"].sum()
 
 preds = resultado1p.get_forecast(steps=1)
 print(preds)
