@@ -5,3 +5,4 @@ numpy
 seaborn
 statsmodels
 prophet
+streamlit_extras
