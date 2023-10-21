@@ -5,7 +5,6 @@ import numpy as np
 import seaborn as sns
 import streamlit.components.v1 as components
 from streamlit_extras.metric_cards import style_metric_cards
-import io
 from statsmodels.tsa.arima_model import ARIMA
 from statsmodels.tsa.statespace.sarimax import SARIMAX
 from sklearn.linear_model import LinearRegression
@@ -46,7 +45,7 @@ st.markdown(rect_html, unsafe_allow_html=True)
 st.sidebar.header("Opciones")
 
 
-data = pd.read_csv("C:\\Users\\juana\\Downloads\\precios.csv")
+data = pd.read_csv("precios.csv")
 
 data["Fecha"] = pd.to_datetime(data["Fecha"])
 
@@ -64,7 +63,8 @@ prom = "Q" + str(promedio)
 
 
 #Modelo SARIMAX
-resultado1p = joblib.load('modelo1p.pkl')
+model1p = SARIMAX(data, order=(1,1,1), seasonal_order=(5,1,0,12))
+resultado1p = model1p.fit()
 pred1p = resultado1p.get_forecast(steps=90)
 pred1pvalues = pred1p.predicted_mean
 pred1pc = pred1p.conf_int()
@@ -206,6 +206,20 @@ else:
     plt.fill_between(forecastp["ds"], forecastp["yhat_lower"], forecastp["yhat_upper"], color="pink",  label="Error Prediccion")
     plt.legend()
     st.pyplot(fig4)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
