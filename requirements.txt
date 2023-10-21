@@ -3,7 +3,6 @@ pandas
 matplotlib
 numpy
 seaborn
-io
 statsmodels
 sklearn
 joblib
