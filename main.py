@@ -25,7 +25,7 @@ body {
 logo_container = st.sidebar.container()
 
 # Añadir el logo al contenedor del logo
-logo_container.image("truck.png", width=60)
+logo_container.image("./truck.png", width=60)
 
 
 # Create a custom layout for the rectangle
@@ -43,7 +43,7 @@ st.markdown(rect_html, unsafe_allow_html=True)
 st.sidebar.header("Opciones")
 
 
-data = pd.read_csv("precios.csv")
+data = pd.read_csv("./precios.csv")
 
 data["Fecha"] = pd.to_datetime(data["Fecha"])
 
