@@ -1,13 +1,10 @@
 streamlit
 pandas
-matplotlib.pyplot
+matplotlib
 numpy
 seaborn
-streamlit.components.v1
-style_metric_cards
 io
-statsmodels.tsa.arima_model
-statsmodels.tsa.statespace.sarimax
-sklearn.linear_model
+statsmodels
+sklearn
 joblib
 prophet
